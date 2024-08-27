@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.fondo {
+  background: 
+  linear-gradient(90deg, rgba(255, 105, 180, 0.3) 0%, rgba(0, 191, 255, 0.3) 100%),
+  #393a47;
+
+}
+
+html, body {
+  color: #fff;
+  background: 
+  linear-gradient(90deg, rgba(255, 105, 180, 0.3) 0%, rgba(0, 191, 255, 0.3) 100%),
+  #393a47;
+}
+
+main {
+  height: 100vh;
+  height: 100dvh;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
