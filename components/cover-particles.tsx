@@ -31,7 +31,6 @@ const CoverParticles = () => {
                             enable: true,
                             mode: "repulse",
                         },
-                        resize: true,
                     },
                     modes: {
                         push: {
@@ -67,7 +66,6 @@ const CoverParticles = () => {
                     number: {
                         density: {
                             enable: true,
-                            area: 700,
                         },
                         value: 100,
                     },
@@ -76,22 +74,18 @@ const CoverParticles = () => {
                         animation: {
                             enable: true,
                             speed: 3, // Velocidad de pulsación de opacidad
-                            minimumValue: 0.3,
                             sync: false,
                         },
                     },
                     shape: {
                         type: ["circle", "square", "triangle", "polygon"],
-                        polygon: {
-                            nb_sides: 6,
-                        },
+
                     },
                     size: {
                         value: { min: 4, max: 10 },
                         animation: {
                             enable: true,
                             speed: 10, // Velocidad de pulsación de tamaño
-                            minimumValue: 4,
                             sync: false,
                         },
                     },
