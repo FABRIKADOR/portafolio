@@ -193,7 +193,7 @@ export const dataPortfolio = [
     {
         id: 4,
         title: "Frontabyss",
-        image: "/frontabyss.jpg",
+        image: "/Frontabyss.jpg",
         urlGithub: "https://www.figma.com/design/D0Y2r6dm106c2OlDwFrzcf/Untitled?node-id=0-1&t=bfCnblVK8mtMa6Lt-1",
         urlDemo: "https://www.figma.com/design/D0Y2r6dm106c2OlDwFrzcf/Untitled?node-id=0-1&t=bfCnblVK8mtMa6Lt-1",
     },
