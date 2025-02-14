@@ -1,42 +1,104 @@
-import TransitionPage from "@/components/transition-page";
+"use client"
+
+import { motion } from "framer-motion"
+import { Mail, Phone, MapPin, Send } from "lucide-react"
+import TransitionPage from "@/components/transition-page"
 
 const ContactPage = () => {
-    return (
-        <>
-            <TransitionPage />
-            <div className="flex items-center justify-center min-h-screen pt-16 px-4">
-                <div className="max-w-4xl mx-auto p-6 bg-white bg-opacity-5 backdrop-blur-lg rounded-lg shadow-lg">
-                    <h1 className="text-4xl md:text-5xl font-extrabold text-secondary leading-tight text-center md:text-left md:mb-5">
-                        Contáctame <span className="font-bold text-secondary">.</span>
-                    </h1>
-                    <div className="grid md:grid-cols-2 gap-6 mt-8">
-                        {/* Información de contacto */}
-                        <div className="flex flex-col items-center md:items-start">
-                            <h2 className="text-xl md:text-2xl font-semibold text-gray-200 mb-6">Información de contacto</h2>
-                            <div className="mb-6 flex items-start">
-                                <svg className="w-8 h-8 text-secondary mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h1.5M3 15h1.5m-1.5-5h1.5m4-7h4a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zM7 3v12m4-6h3m-3 3h3m-3 3h3" />
-                                </svg>
-                                <div>
-                                    <h3 className="text-lg font-semibold text-gray-300">Email:</h3>
-                                    <p className="text-gray-200">arianfabricioaguilar@gmail.com</p>
-                                </div>
-                            </div>
-                            <div className="mb-6 flex items-start">
-                                <svg className="w-8 h-8 text-secondary mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.3 4.9a3.4 3.4 0 0 1 4.6-.6l2.3 2.3a3.4 3.4 0 0 1 .6 4.6l-3.3 3.3A1 1 0 0 1 5 14l-2.3-2.3a3.4 3.4 0 0 1-.6-4.6zM19 5h.01M16 4v4m0 0v6a4 4 0 1 0 8 0V6a4 4 0 1 0-8 0z" />
-                                </svg>
-                                <div>
-                                    <h3 className="text-lg font-semibold text-gray-300">Teléfono:</h3>
-                                    <p className="text-gray-200">+51 998-351-3473</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+  const fadeIn = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6 },
+  }
+
+  return (
+    <>
+      <TransitionPage />
+      <div className="flex items-center justify-center min-h-screen pt-20 px-4">
+        <motion.div
+          className="max-w-4xl w-full mx-auto p-8 bg-white bg-opacity-5 backdrop-blur-lg rounded-xl shadow-2xl"
+          initial="initial"
+          animate="animate"
+        >
+          <h1 className="text-4xl md:text-5xl font-extrabold text-secondary leading-tight text-center mb-8">
+            Contáctame <span className="text-white">.</span>
+          </h1>
+          <div className="grid md:grid-cols-2 gap-10">
+            {/* Información de contacto */}
+            <motion.div className="flex flex-col space-y-6" >
+              <h2 className="text-2xl font-semibold text-white mb-4">Información de contacto</h2>
+              <div className="flex items-center space-x-4">
+                <Mail className="w-6 h-6 text-secondary" />
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-300">Email:</h3>
+                  <p className="text-gray-400">arianfabricioaguilar@gmail.com</p>
                 </div>
-            </div>
-        </>
-    );
+              </div>
+              <div className="flex items-center space-x-4">
+                <Phone className="w-6 h-6 text-secondary" />
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-300">Teléfono:</h3>
+                  <p className="text-gray-400">+51 998-351-3473</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-4">
+                <MapPin className="w-6 h-6 text-secondary" />
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-300">Ubicación:</h3>
+                  <p className="text-gray-400">Cancun, México</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Formulario de contacto */}
+            <motion.form className="space-y-4">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-300">
+                  Nombre
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  className="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-white focus:border-secondary focus:ring focus:ring-secondary focus:ring-opacity-50"
+                />
+              </div>
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-300">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  className="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-white focus:border-secondary focus:ring focus:ring-secondary focus:ring-opacity-50"
+                />
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-300">
+                  Mensaje
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={4}
+                  className="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-white focus:border-secondary focus:ring focus:ring-secondary focus:ring-opacity-50"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                className="w-full flex justify-center items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-secondary hover:bg-secondary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary"
+              >
+                <Send className="w-5 h-5 mr-2" />
+                Enviar mensaje
+              </button>
+            </motion.form>
+          </div>
+        </motion.div>
+      </div>
+    </>
+  )
 }
 
-export default ContactPage;
+export default ContactPage
+
